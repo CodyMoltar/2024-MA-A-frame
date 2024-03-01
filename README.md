@@ -1,2 +1,2 @@
-# 2024-MA-A-frame
+# Course description
  This course offers an introduction to A-Frame, a web framework for building virtual reality experiences with HTML and JavaScript. Designed for first-year master students with varied technical backgrounds, this course will cover the fundamentals of web development alongside A-Frame to create interactive VR portfolio websites. Through hands-on projects and demonstrations, students will gain the skills needed to design and develop immersive web experiences.

@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s;
+}
+
+#button {
+    padding: 1em;
+    font-size: 2em;
+    text-transform: uppercase;
+    background-color: rgb(255, 141, 141);
+    color: white;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 5px solid black;
+    transition: rotate 0.5s, background-color 0.5s, color 0.5s, transform 0.5s;
+}
+
+#button:hover {
+    background-color: #f00;
+    color: #fff;
+    cursor: pointer;
+}
+
+#button:active {
+    background-color: #d00;
+    color: #fff;
+    transform: scale(0.95);
+}
