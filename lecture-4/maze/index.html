@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-cursor-teleport@1.5.0/dist/aframe-cursor-teleport-component.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.4.0/dist/aframe-extras.min.js"></script>
+        <script src="./changematerial.js"></script>
+        <script src="./openlink.js"></script>
+    </head>
+
+    <body>
+        <a-scene
+            cursor="rayOrigin: mouse; far:5"
+            fog="density: 0.08; far: 20; type: exponential; color:#ffffff"
+        >
+            <a-assets>
+                <a-asset-item src="./world.glb" id="worldGLB"></a-asset-item>
+                <a-asset-item src="./floor.glb" id="floorGLB"></a-asset-item>
+
+                <a-asset-item
+                    src="./abstract_core.glb"
+                    id="abstractCoreGLB"
+                ></a-asset-item>
+
+                <video src="./pano.mp4" id="360videoMP4" autoplay loop="true"></video>
+
+                <a-asset-item src="./solomon.glb" id="SOLOMONGLB"></a-asset-item>
+            </a-assets>
+
+            <a-entity
+                id="cameraRig"
+                cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable"
+            >
+                <a-entity
+                    id="head"
+                    position="0 1.52 0"
+                    camera
+                    look-controls="reverseMouseDrag: true"
+                >
+                </a-entity>
+            </a-entity>
+
+            <a-sky color="white"></a-sky>
+
+            <a-entity
+                shadow
+                changematerial
+                position="10.478 -1.000 -40.756"
+                class="clickable"
+                gltf-model="#worldGLB"
+            ></a-entity>
+            <a-entity
+                position="10.478 -0.99 -40.756"
+                visible="false"
+                class="collision"
+                gltf-model="#floorGLB"
+            ></a-entity>
+
+            <!-- lights -->
+
+            <!-- <a-light light="type: point; distance: 4; intensity: 2.5; decay: 2.14" position="0 2 -2.854"></a-light> -->
+
+            <!-- <a-light light="type: point; distance: 5; intensity:0.5" position="0 2 -15"></a-light>
+            <a-light light="type: point; distance: 5; intensity:0.5" position="0 2 -25"></a-light>
+            <a-light light="type: point; distance: 5; intensity:0.5" position="0 2 -35"></a-light>
+            <a-light light="type: point; distance: 5; intensity:0.5" position="0 2 -45"></a-light> -->
+
+            <a-entity animation="property:rotation; to: 0 0 360; dur:50000; loop:true; easing:linear">
+                <a-light
+                    type="directional"
+                    color="orange"
+                    position="2 -1.4 0"
+                ></a-light>
+                <a-light
+                    type="directional"
+                    color="blue"
+                    position="-2 -1.4 0"
+                ></a-light>
+                <a-light
+                    type="directional"
+                    color="red"
+                    position="0 2 0"
+                ></a-light>
+            </a-entity>
+
+            <!-- exhibit 1 -->
+            <a-entity
+                position="-9.24709 2.423 -34.1282"
+                scale="2 2 2"
+                rotation="0 42.8 0"
+            >
+                <a-entity
+                    animation-mixer="loop: pingpong"
+                    scale="0.01 0.01 0.01"
+                    class="clickable"
+                    gltf-model="#abstractCoreGLB"
+                    rotation="0 -144 0"
+                    shadow=""
+                    openlink
+                    animation="property:rotation; to: 0 360 0; dur: 10000; loop:true; easing:linear"
+                ></a-entity>
+                <a-entity
+                    light="type: point; castShadow: true; angle: 27.8; distance: 5.07; penumbra: 1; intensity: 27"
+                    rotation=""
+                    position="-0.29895 0.26818 1.2928"
+                ></a-entity>
+                <a-light
+                    light="type: point; distance: 5; intensity: 0.5"
+                    position="0 2 0"
+                ></a-light>
+            </a-entity>
+
+            <a-entity visible="false" position="0 1 -3
+            ">
+                <a-box color="red"></a-box>
+                <a-box color="green"></a-box>
+                <a-box color="blue"></a-box>
+            </a-entity>
+
+            <!-- <a-entity shadow animation-mixer position="10 0 -58.30852" rotation="" scale="0.002 0.002 0.002" gltf-model="./solomon.glb"></a-entity> -->
+
+            <a-videosphere radius="3" position="0 4 -85.9" src="#360videoMP4" material="" geometry=""></a-videosphere>
+        </a-scene>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+
+            <a-assets>
+                <a-cubemap id="cubemap">
+                    <img src="./cubemap/px.png">
+                    <img src="./cubemap/nx.png">
+                    <img src="./cubemap/py.png">
+                    <img src="./cubemap/ny.png">
+                    <img src="./cubemap/pz.png">
+                    <img src="./cubemap/nz.png">
+                </a-cubemap>
+            </a-assets>
+
+            <a-box
+                position="-1 0.5 -3"
+                rotation="0 45 0"
+                color="#fff"
+            ></a-box>
+            <a-sphere
+                position="0 1.25 -5"
+                radius="1.25"
+                color="#fff"
+            ></a-sphere>
+            <a-cylinder
+                position="1 0.75 -3"
+                radius="0.5"
+                height="1.5"
+                color="#fff"
+            ></a-cylinder>
+            <a-plane
+                position="0 0 -4"
+                rotation="-90 0 0"
+                width="4"
+                height="4"
+                color="#fff"
+            ></a-plane>
+
+            <a-videosphere src="./video.mp4"></a-videosphere>
+
+            <a-light type="probe" envMap="#cubemap"></a-light>
+
+            <a-entity light="type:directional"></a-entity>
+            
+        </a-scene>
+    </body>
+</html>

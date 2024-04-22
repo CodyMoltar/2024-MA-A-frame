@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-cursor-teleport@1.5.0/dist/aframe-cursor-teleport-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene fog="color:white; type:exponential; density:0.025">
+
+        <a-assets>
+            <a-asset-item id="anastasija" src="./a1.glb"></a-asset-item>
+            <audio src="./media/spring.wav" id="springWAV"></audio>
+        </a-assets>
+
+        <a-entity id="cameraRig" cursor-teleport="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable">
+            <a-entity id="head" position="0 1.52 0" camera look-controls="reverseMouseDrag: true"></a-entity>
+        </a-entity>
+    
+        <!-- <a-entity class="collision" shadow position="5.693 0 -33.576" scale="0.35 0.35 0.35" gltf-model="#worldGLB"></a-entity>
+        <a-plane class="collision" color="white" rotation="-90 0 0" material="" geometry="width: 67.55; height: 74.9" position="7.572 0 -31.22546"></a-plane> -->
+
+        <a-entity id="anast" shadow class="collision" gltf-model="#anastasija" ></a-entity>
+
+        <a-light type="directional" position="-1.11292 2 2.07473" light="castShadow: true; shadowCameraAutomatic:#anast"></a-light>
+        <a-light type="ambient" intensity="0.5"></a-light>
+
+        <a-entity position="-12 1 -5">
+          <a-sound src="#springWAV" sound="autoplay:false; loop:true; positional:false" ></a-sound>
+          <a-box scale="0.1 0.1 0.1" color="red"></a-box>
+        </a-entity>
+
+        <a-sky src="./media/panoramic-sea.jpg" material="fog:false"></a-sky>
+
+        <!-- <a-image src="./media/guy.gif" position="0 1.6 -2"></a-image> -->
+        
+
+        <!--  -->
+
+    </a-scene>
+
+    <!-- <script src="./loader.js"></script> -->
+  </body>
+</html>
