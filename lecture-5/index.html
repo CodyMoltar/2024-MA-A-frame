@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+        <script src="./player-location.js"></script>
+    </head>
+    <body>
+        <a-scene player-location>
+            <a-entity id="rig" position="0 0 0">
+                <a-entity position="0 1.5 0" id="camera" camera look-controls wasd-controls></a-entity>
+            </a-entity>
+
+            <a-video src="./road.mp4" position="0 1.5 -3" width="16" height="9" scale="0.1 0.1 0.1" >
+                <a-plane></a-plane>
+            </a-video>
+
+            
+        </a-scene>
+    </body>
+</html>
