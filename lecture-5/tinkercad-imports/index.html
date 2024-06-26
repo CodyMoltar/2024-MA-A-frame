@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            
+            <a-entity scale="0.1 0.1 0.1" shadow gltf-model="./test.glb" position="0 0 -3"></a-entity>
+
+            <a-plane shadow rotation="-90 0 0" color="white" material="shader: shadow" geometry="height: 100; width: 100"></a-plane>
+            
+            <a-entity light="type:directional; castShadow:true" position="2 2 2"></a-entity>
+
+        </a-scene>
+    </body>
+</html>

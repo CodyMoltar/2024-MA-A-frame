@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    </head>
+    <body>
+
+        <a-scene>
+
+            <a-entity id="cameraRig" position="0 0 0">
+                <a-entity id="head" position="0 1.6 0" camera look-controls="reverseMouseDrag: true" wasd-controls></a-entity>
+            </a-entity>
+
+            <a-entity gltf-model="./models/waterfall.glb" position="-1.7 7 -21.9" scale="30 30 30"></a-entity>
+
+            <a-entity gltf-model="./models/swan.glb" position="1 0 -4" scale=""></a-entity>
+            
+            <a-entity gltf-model="./models/koki.glb" position="-3.98503 0 -13.86448" scale="10 10 10"></a-entity>
+            <a-entity gltf-model="./models/koki.glb" position="-7.41445 0 -13.864" scale="10 10 10" rotation="0 -97.78 0"></a-entity>
+
+            
+
+        </a-scene>
+        
+    </body>
+</html>
